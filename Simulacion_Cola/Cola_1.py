@@ -54,7 +54,7 @@ def MixtoCongruente(XInicial, a, c, m, size):
 
 # TiempoEntrada
 def ProbabilidadDeEntradasPorTiempo(Tiempo, Lambda, n):
-    return e ** ((-Lambda * Tiempo) * ((Lambda * Tiempo) ** n)) / factorial(n)
+    return e ** (-Lambda * Tiempo) * ((Lambda * Tiempo) ** n) / factorial(n)
 
 
 def ProbabilidadDeEntrada(n,Lambda):
