@@ -54,16 +54,23 @@ def MixtoCongruente(XInicial, a, c, m, size):
 
 # TiempoEntrada
 def ProbabilidadDeEntradasPorTiempo(Tiempo, Lambda, n):
-    return e ** ((Lambda * Tiempo) * ((Lambda * Tiempo) ** n)) / factorial(n)
+    return e ** ((-Lambda * Tiempo) * ((Lambda * Tiempo) ** n)) / factorial(n)
 
 
-def ProbabilidadDeEntrada(Posibilidades):
+def ProbabilidadDeEntrada(n,Lambda):
+    vieja = 0
+    Probabilidades = []
+    for i in range(n):
+        nueva = ProbabilidadDeEntradasPorTiempo(1,Lambda,n) + vieja
+        vieja = nueva
+        Probabilidades.append(nueva)
+    print(Probabilidades)
     print(
-        "Probailidades de LLegada de Clientes:\n{0:.4f} --> No Hay Cliente Nuevo"
+        "Probabilidades de Llegadas de Clientes:\n{0:.4f} --> No Hay Cliente Nuevo"
         "\n{1:.4f} --> Hay 1 Cliente Nuevo\n{2:.4f} --> Hay 2 Clientes Nuevos\n"
         "{3:.4f} --> Hay 3 Clientes Nuevos\n"
     )
-    for probabilidad in Posibilidades:
+    for probabilidad in Probabilidades:
         if probabilidad <= 0:
             print("No Han Ingresado Nuevos Clientes - Numero Aleatorio Obtenido = ", probabilidad)
         elif 1 <= probabilidad <= 3:
@@ -76,9 +83,9 @@ def ProbabilidadDeEntrada(Posibilidades):
 
 # Codigo de Procesos
 print("\n\n\nInicio de La Simulacion")
-Entrada = MixtoCongruente(2, 1, 3, 10, 10)
-print("Numeros PseudoAleatorios Obtenidos ", Entrada, "\n\n")
+#Entrada = MixtoCongruente(2, 1, 3, 10, 10)
+#print("Numeros PseudoAleatorios Obtenidos ", Entrada, "\n\n")
 
-Lambda = 45 / 60
+Lambda = 45/60
 U = 1
-ProbabilidadDeEntrada(Entrada)
+ProbabilidadDeEntrada(4, Lambda)
