@@ -98,7 +98,7 @@ def ProbabilidadDeEntrada(n, Lambda, Entrada):
 # Codigo de Procesos
 print("\n\tInicio de La Simulacion\n")
 Entrada = MixtoCongruente(100, 61, 27, 100, 120) # Se utilizo para generar numeros aleatorios controlados, tema explicado en las guias de Acropolis
-print("\t\t\nNumeros PseudoAleatorios Obtenidos \n", Entrada)
+print("\t\t\nNumeros PseudoAleatorios Obtenidos\n", Entrada)
 
 Lambda = 45/60
 U = 1
