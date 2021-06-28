@@ -95,22 +95,26 @@ def ProbabilidadDeEntrada(n, Lambda, Entrada):
             ClientesAtendidos += 1
 
     print("Clientes Atendidos en 2 Hora: ", ClientesAtendidos)
+
+
+
 # Codigo de Procesos
 print("\n\tInicio de La Simulacion\n")
 Entrada = MixtoCongruente(100, 61, 27, 100, 120) # Se utilizo para generar numeros aleatorios controlados, tema explicado en las guias de Acropolis
 print("\t\t\nNumeros PseudoAleatorios Obtenidos\n", Entrada)
-
+# Inicializacion
 Lambda = 45/60
 U = 1
-ProbabilidadDeEntrada(4, Lambda, Entrada)
-
+# Eventos y Procesos
+ProbabilidadDeEntrada(4, Lambda, Entrada)  #Tiempo de Simulacion y Eventos
+# Procesos
 p = TraficoDelSistema(Lambda, U)
 pCero = ProbabilidadDeNPaquetesEnSistema(p, 0)
 Wq = TiempoDeEsperaEnColaCliente(p, U, Lambda)
 Ws = TiempoPromedioEnSistemaCliente(Wq, U)
 Lq = TiempoDeEsperaEnColaPaquete(Lambda, Wq)
 Ls = TiempoPromedioEnSistemaPaquete(Lambda, Ws)
-
+# Informe Final
 print("\t\t\t\n\n++  Resultados Obtenidos de la Simulación  ++")
 print("\nUnidad de Tiempo Utilizada: \n\t\tMinutos (60 Minutos)\n\tTiempo De Simulación: 2 Horas\n\n")
 print(
