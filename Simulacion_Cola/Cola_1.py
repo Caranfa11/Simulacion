@@ -72,26 +72,26 @@ def ProbabilidadDeEntrada(n, Lambda, Entrada):
     print("\n")
     for Pseudoaleatorio in Entrada:
         if Pseudoaleatorio <= (Probabilidades[0]*100):
-            print("\nNo Han Ingresado Nuevos Clientes       - Numero PseudoAleatorio Obtenido = ", Pseudoaleatorio, "     * Clientes Actuales: ", Clientes)
+            print("\nNo Han Ingresado Nuevos Clientes       - Numero PseudoAleatorio Obtenido = {0:.0f}     * Clientes Actuales: {1:.0f}".format(Pseudoaleatorio,Clientes))
 
         elif Probabilidades[0]*100 < Pseudoaleatorio <= (Probabilidades[1]*100):
             Clientes += 1
-            print("\nNuevo Cliente Ingresado     1          - Numero PseudoAleatorio Obtenido = ", Pseudoaleatorio, "     * Clientes Actuales: ", Clientes)
+            print("\nNuevo Cliente Ingresado     1          - Numero PseudoAleatorio Obtenido = {0:.0f}     * Clientes Actuales: {1:.0f}".format(Pseudoaleatorio,Clientes))
 
         elif (Probabilidades[1]*100) < Pseudoaleatorio < (Probabilidades[2] * 100):
             Clientes += 2
-            print("\nNuevos Clientes Ingresados  2          - Numero PseudoAleatorio Obtenido = ", Pseudoaleatorio, "     * Clientes Actuales: ", Clientes)
+            print("\nNuevos Clientes Ingresados  2          - Numero PseudoAleatorio Obtenido = {0:.0f}     * Clientes Actuales: {1:.0f}".format(Pseudoaleatorio,Clientes))
 
         elif 99 <= Pseudoaleatorio <= 100:
             Clientes += 3
-            print("\nNuevos Clientes Ingresados  3          - Numero PseudoAleatorio Obtenido = ", Pseudoaleatorio, "     * Clientes Actuales: ", Clientes)
+            print("\nNuevos Clientes Ingresados  3          - Numero PseudoAleatorio Obtenido = {0:.0f}     * Clientes Actuales: {1:.0f}".format(Pseudoaleatorio,Clientes))
 
 
         if Clientes >= 1:
             Clientes -= 1
-            print("\nCliente Atendido                                                                     * Clientes Actuales: ", Clientes)
+            print("\nCliente Atendido                                                                 * Clientes Actuales: ", Clientes)
         else:
-            print("\n                                                                                     * Clientes Actuales: ", Clientes)
+            print("\n                                                                                 * Clientes Actuales: ", Clientes)
             ClientesAtendidos += 1
 
     print("Clientes Atendidos en 2 Hora: ", ClientesAtendidos)
